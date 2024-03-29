@@ -15,12 +15,10 @@ class BlueClass extends StatelessWidget {
             10,
             (index) => ListTile(
                   onTap: () {
-                    Navigator.pushNamed(context, "details",
-                        arguments: {'id': index});
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => Details(id: index)));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Details(id: index.toString())));
                   },
                   title: Text("Data of $index"),
                 )),
@@ -30,7 +28,7 @@ class BlueClass extends StatelessWidget {
 }
 
 class Details extends StatelessWidget {
-  final int id;
+  final String id;
   const Details({super.key, required this.id});
 
   @override

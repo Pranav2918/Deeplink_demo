@@ -24,7 +24,8 @@ final GoRouter router = GoRouter(
         path: '/details/:id',
         name: "details",
         builder: (context, state) {
-          return Details(id: state.pathParameters['id'] as int);
+          final String id = state.pathParameters['id'].toString();
+          return Details(id: id);
         }),
   ],
 );
